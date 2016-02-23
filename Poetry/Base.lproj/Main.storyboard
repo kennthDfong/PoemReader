@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WeK-gy-JzJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--诗词鉴赏-->
+        <scene sceneID="9qK-I1-BlF">
+            <objects>
+                <viewController id="7Ub-Ly-gvQ" customClass="KNMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rTF-EH-z6L"/>
+                        <viewControllerLayoutGuide type="bottom" id="vH1-a4-fwQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G3e-pL-ZGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t2P-EZ-OH0">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KL9-mb-wOa">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fpw-1Z-LTS" customClass="KNCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="64" width="130" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="五言乐府" translatesAutoresizingMaskIntoConstraints="NO" id="QeI-AE-sOW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="65"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H7-gK-EpA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="37" id="UuZ-J6-9Di"/>
+                                                        <constraint firstAttribute="height" constant="37" id="Z2K-z1-HP9"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleat"/>
+                                                    <connections>
+                                                        <action selector="clickDeleteButton:" destination="fpw-1Z-LTS" eventType="touchUpInside" id="tdz-wK-I8Q"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="QeI-AE-sOW" secondAttribute="bottom" id="8NL-2m-95x"/>
+                                            <constraint firstItem="QeI-AE-sOW" firstAttribute="top" secondItem="fpw-1Z-LTS" secondAttribute="top" id="GBh-1u-Mdv"/>
+                                            <constraint firstItem="0H7-gK-EpA" firstAttribute="top" secondItem="fpw-1Z-LTS" secondAttribute="top" id="ZTi-y1-xbQ"/>
+                                            <constraint firstItem="0H7-gK-EpA" firstAttribute="leading" secondItem="fpw-1Z-LTS" secondAttribute="leading" id="etj-hc-itp"/>
+                                            <constraint firstItem="QeI-AE-sOW" firstAttribute="leading" secondItem="fpw-1Z-LTS" secondAttribute="leading" id="wl0-jq-TBp"/>
+                                            <constraint firstAttribute="trailing" secondItem="QeI-AE-sOW" secondAttribute="trailing" id="x0J-vG-9Yq"/>
+                                        </constraints>
+                                        <size key="customSize" width="130" height="65"/>
+                                        <connections>
+                                            <outlet property="backgroundImageView" destination="QeI-AE-sOW" id="wV3-dn-quh"/>
+                                            <outlet property="deleteButton" destination="0H7-gK-EpA" id="Baw-Jr-73D"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Ub-Ly-gvQ" id="GAz-lw-2gw"/>
+                                    <outlet property="delegate" destination="7Ub-Ly-gvQ" id="yHM-N7-JBX"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t2P-EZ-OH0" firstAttribute="top" secondItem="rTF-EH-z6L" secondAttribute="bottom" id="JMc-Vd-aEE"/>
+                            <constraint firstItem="vH1-a4-fwQ" firstAttribute="top" secondItem="t2P-EZ-OH0" secondAttribute="bottom" id="NiN-Hj-VSV"/>
+                            <constraint firstAttribute="trailing" secondItem="t2P-EZ-OH0" secondAttribute="trailing" id="OKU-FX-K8m"/>
+                            <constraint firstItem="t2P-EZ-OH0" firstAttribute="leading" secondItem="G3e-pL-ZGi" secondAttribute="leading" id="RNd-mO-hr0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="诗词鉴赏" id="tEi-KG-afR"/>
+                    <connections>
+                        <outlet property="collectionView" destination="t2P-EZ-OH0" id="fc3-vb-dHi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmn-e1-XpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="293"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NNy-gy-88W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WeK-gy-JzJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6cb-Gv-MvH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Ub-Ly-gvQ" kind="relationship" relationship="rootViewController" id="0wL-uW-0mN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5N-GX-LqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="293"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="deleat" width="17" height="17"/>
+        <image name="五言乐府" width="170" height="81"/>
+    </resources>
+</document>
